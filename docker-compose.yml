@@ -13,12 +13,8 @@ services:
 
     build: client/
     command: python ./client.py
-     networks:
+    networks:
       - mynetwork
-    depends_on:
-      - server
-
-
 
 networks:
   mynetwork:
