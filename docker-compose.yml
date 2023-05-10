@@ -8,11 +8,17 @@ services:
     command: python ./server.py
     ports:
       - 1234:1234
+    networks:
+      - net
 
   client:
 
     build: client/
     command: python ./client.py
-    network_mode: host
-    depends_on:
-      - server
+    networks:
+      - net
+
+
+networks:
+  net:
+    driver: bridge
